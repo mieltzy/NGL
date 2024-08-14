@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         emailjs.send('service_iz8t7cg', 'template_5k2ly2b', {
             message: message
         }).then(function(response) {
-            alert('Message sent successfully!');
+            alert('Your Phone was hacked');
+            alert('JOkeeeeeeeeeeeeee')
+            alert('Pasok na message mo idol salamat')
             document.getElementById('messageInput').value = ''; // Clear the input
             updateUIOnSuccess();
         }).catch(function(error) {
