@@ -1,0 +1,191 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Added font-family for consistency */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 80px;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    background: url(img/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+.profile-section {
+    margin: 20px 0;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.input-msg, .in-msg {
+    margin-block-end: 0;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.in-msg {
+    font-size: 14px;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.041);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(5px);
+    position: relative; /* Ensure proper positioning of the spinner */
+}
+
+/* Ensure the textarea and button take full width in the post container */
+.post-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 15px;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.233);
+    color: #000;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+textarea::placeholder {
+    color: rgba(0, 0, 0, 0.664);
+}
+
+.post-button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.post-button:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+/* Spinner and messages */
+#loadingSpinner {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 10px;
+    display: none;
+}
+
+.success-message {
+    color: green;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    .post-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+/* Accessibility Enhancements */
+textarea:focus, .post-button:focus {
+    outline: 2px solid #1877f2;
+    outline-offset: 2px;
+}

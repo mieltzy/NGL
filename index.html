@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ngl.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGL-Send Message</title>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="img/video/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <audio id="background-music" autoplay loop>
+        <source src="img/video/Tmate.cc_1723405340.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="content">
+        <h1>WELCOME TO MY NGL</h1>
+        <div class="profile-section">
+            <img src="img/profile.jpg" alt="Profile Picture" class="profile-pic">
+        </div>
+        <p class="input-msg">HI, I'm 「 ✦ Miel ✦ 」.</p>
+        <p class="in-msg">Share your thoughts anonymously below⬇↓</p>
+    </div>
+    <div class="post-container">
+        <div class="post-input">
+            <textarea id="messageInput" placeholder="We'd love to hear your anonymous message"></textarea>
+            <button id="postButton" class="post-button">Send</button>
+        </div>
+        <div id="loadingSpinner" style="display:none;">Loading...</div>
+        <div id="responseMessage" style="display:none;"></div> <!-- For success or error messages -->
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> <!-- EmailJS SDK -->
+    <script src="ngl.js"></script>
+</body>
+</html>
